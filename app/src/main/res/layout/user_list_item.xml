@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:paddingTop="@dimen/margin_llmedium"
+    android:paddingStart="@dimen/margin_llmedium"
+    android:paddingEnd="@dimen/margin_llmedium"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/first_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/HeaderText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/last_name_tv"
+        style="@style/HeaderText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_small"
+        android:layout_marginEnd="@dimen/margin_llmedium"
+        app:layout_constraintStart_toEndOf="@id/first_name_tv"
+        app:layout_constraintTop_toTopOf="@id/first_name_tv" />
+
+    <ImageButton
+        android:id="@+id/user_delete_btn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitXY"
+        app:layout_constraintTop_toTopOf="@id/last_name_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_close_black_24dp"
+        android:tint="@color/grey_60"/>
+
+    <TextView
+        android:id="@+id/street_tv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="@id/first_name_tv"
+        app:layout_constraintEnd_toEndOf="@id/last_name_tv"
+        app:layout_constraintTop_toBottomOf="@id/first_name_tv" />
+
+    <TextView
+        android:id="@+id/state_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        app:layout_constraintStart_toStartOf="@id/street_tv"
+        app:layout_constraintTop_toBottomOf="@id/street_tv" />
+
+    <TextView
+        android:id="@+id/city_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        app:layout_constraintStart_toEndOf="@id/state_tv"
+        app:layout_constraintTop_toTopOf="@id/state_tv" />
+
+    <TextView
+        android:id="@+id/postcode_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_medium"
+        app:layout_constraintStart_toEndOf="@id/city_tv"
+        app:layout_constraintTop_toTopOf="@id/city_tv" />
+
+    <View
+        android:id="@+id/item_separator"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/margin_llmedium"
+        app:layout_constraintTop_toBottomOf="@+id/state_tv"
+        app:layout_constraintStart_toStartOf="@id/state_tv"
+        android:background="@color/colorPrimary" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
